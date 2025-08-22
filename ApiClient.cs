@@ -36,7 +36,7 @@ namespace ThreeCDeveloperTest
                 if (response.IsSuccessStatusCode)
                 {
                     string content = await response.Content.ReadAsStringAsync();
-                    Console.WriteLine("✅ Request successful!");
+                    Console.WriteLine("Request successful!");
                     
                     return new ApiResponse<string>
                     {
@@ -80,8 +80,56 @@ namespace ThreeCDeveloperTest
             }
         }
 
+        /// <summary>
+        /// Fetches data and parses it as CompanyInfo object
+        /// </summary>
+        /// <returns>Typed API response containing company information</returns>
+        public async Task<ApiResponse<CompanyInfo>> GetExamDataAsObjectAsync()
+        {
+            try
+            {
+                var stringResponse = await GetExamDataAsync();
+                
+                if (stringResponse.Success && !string.IsNullOrEmpty(stringResponse.Data))
+                {
+                    var companyInfo = JsonSerializer.Deserialize<CompanyInfo>(stringResponse.Data, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+                    
+                    return new ApiResponse<CompanyInfo>
+                    {
+                        Success = true,
+                        Data = companyInfo,
+                        StatusCode = stringResponse.StatusCode,
+                        Message = "Data parsed successfully"
+                    };
+                }
+                else
+                {
+                    return new ApiResponse<CompanyInfo>
+                    {
+                        Success = false,
+                        Data = null,
+                        StatusCode = stringResponse.StatusCode,
+                        Message = stringResponse.Message
+                    };
+                }
+            }
+            catch (JsonException ex)
+            {
+                string errorMessage = $"JSON parsing error: {ex.Message}";
+                Console.WriteLine($"❌ {errorMessage}");
+                return CreateErrorResponse<CompanyInfo>(errorMessage);
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = $"Error: {ex.Message}";
+                Console.WriteLine($"❌ {errorMessage}");
+                return CreateErrorResponse<CompanyInfo>(errorMessage);
+            }
+        }
 
-      
         private static ApiResponse<T> CreateErrorResponse<T>(string message)
         {
             return new ApiResponse<T>

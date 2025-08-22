@@ -12,3 +12,4 @@ C:\Users\payai\Documents\Work\3C_Developer_Test_C#\obj\Debug\net8.0\refint\3C_De
 C:\Users\payai\Documents\Work\3C_Developer_Test_C#\obj\Debug\net8.0\3C_Developer_Test_C#.pdb
 C:\Users\payai\Documents\Work\3C_Developer_Test_C#\obj\Debug\net8.0\3C_Developer_Test_C#.genruntimeconfig.cache
 C:\Users\payai\Documents\Work\3C_Developer_Test_C#\obj\Debug\net8.0\ref\3C_Developer_Test_C#.dll
+C:\Users\payai\Documents\Work\3C_Developer_Test_C#\obj\Debug\net8.0\3C_Developer_Test_C#.sourcelink.json

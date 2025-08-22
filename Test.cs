@@ -15,6 +15,9 @@ namespace ThreeCDeveloperTest
             
             try
             {
+              
+
+           
                 var objectResponse = await apiClient.GetExamDataAsObjectAsync();
                 
                 if (objectResponse.Success && objectResponse.Data != null)
