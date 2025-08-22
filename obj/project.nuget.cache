@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "5DygQjFhVqk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\payai\\Documents\\Work\\3C_Developer_Test_C#\\3C_Developer_Test_C#.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\payai\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.19\\microsoft.netcore.app.ref.8.0.19.nupkg.sha512",
+    "C:\\Users\\payai\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.19\\microsoft.windowsdesktop.app.ref.8.0.19.nupkg.sha512",
+    "C:\\Users\\payai\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.19\\microsoft.aspnetcore.app.ref.8.0.19.nupkg.sha512",
+    "C:\\Users\\payai\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.19\\microsoft.netcore.app.host.win-x64.8.0.19.nupkg.sha512"
+  ],
+  "logs": []
+}
